@@ -1,3 +1,3 @@
 export var global = {
-    url: 'http://localhost/api-rest-laravel/public/api/'
+    url: 'http://localhost/sistema-fullstack/api-rest-laravel/public/api/'
 }
