@@ -1,0 +1,25 @@
+<div class="col-md-12 mt-1">
+    <h1>{{page_title}}</h1>
+    <p>register works!</p>
+    <form class="col-md-5 ml-0 pl-0" #registerForm="ngForm" (ngSubmit)="onSubmit(registerForm)">
+        <div class="form-group">
+            <label for="name">Nombre</label>
+            <input type="text" name="name" class="form-control" #name="ngModel" [(ngModel)]="user.name">
+        </div>
+        <div class="form-group">
+            <label for="surname">Apellido</label>
+            <input type="text" name="surname" class="form-control" #surname="ngModel" [(ngModel)]="user.surname">
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="text" name="email" class="form-control" #email="ngModel" [(ngModel)]="user.email" >
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" name="password" class="form-control" #paswword="ngModel" [(ngModel)]="user.password">
+        </div>
+        <br>
+        <input type="submit" value="Registrar" class="btn btn-success"  />
+    </form>
+</div>
+
