@@ -1,12 +1,16 @@
-import { Injectable } from '@angular/core'
+import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders} from '@angular/common/http'
 import { Observable } from 'rxjs'
 
 import { User } from '../models/user'
 import { global } from './global'
-@Injectable()
-export class UserService{
-    public url = global.url;
+
+@Injectable({
+  providedIn: 'root'
+})
+export class UsersServiceService {
+
+  public url = global.url;
     constructor(
         public _http: HttpClient
     ){}
@@ -20,10 +24,10 @@ export class UserService{
         return this._http.post(this.url+'/register', params, {headers: headers});
     }
 
-    getUsers(): Observable<any>{
-        //let headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded')
+    getUsers(): Observable<User>{
         let headers = new HttpHeaders().set('Content-Type', 'application/json')
-        return this._http.get<any>(this.url);
+        //let headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded')
+        return this._http.get<User>(this.url+'/listado');
     }
 
 }
